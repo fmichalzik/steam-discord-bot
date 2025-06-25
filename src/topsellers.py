@@ -32,6 +32,7 @@ def get_topsellers_ids(count=1):
         ids.append(id)
     return ids
 
+# returns a list with price and discount informations, based on the topsellers id list
 def get_discounted_topsellers(count=1, discount=33):
     discounted_topsellers = []
     topsellers_ids = get_topsellers_ids(count)
@@ -41,6 +42,7 @@ def get_discounted_topsellers(count=1, discount=33):
             discounted_topsellers.append(topseller)
     return discounted_topsellers
 
+# generated a formatted print out for the get_discounted_topsellers functions
 def print_discounted_topsellers(count=1, discount=33):
     discounted_topsellers = get_discounted_topsellers(count, discount)
     print(
