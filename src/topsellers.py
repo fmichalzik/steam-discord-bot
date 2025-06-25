@@ -40,3 +40,20 @@ def get_discounted_topsellers(count=1, discount=33):
         if topseller['discount_percent'] >= discount:
             discounted_topsellers.append(topseller)
     return discounted_topsellers
+
+def print_discounted_topsellers(count=1, discount=33):
+    discounted_topsellers = get_discounted_topsellers(count, discount)
+    print(
+f'''
+🎮 Aktuelle Steam-Topseller mit mindestens {discount}% Rabatt: {len(discounted_topsellers)}
+        
+''')
+    for game in discounted_topsellers:
+        print(
+f'''
+{game['name']} - {game['discount_percent']}% Rabatt
+Preis: {game['final_price']}€ (statt {game['original_price']}€)
+Link: {game['steam_url']}
+
+'''
+        )
