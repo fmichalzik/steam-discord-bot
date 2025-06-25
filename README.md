@@ -19,9 +19,9 @@ The requests package is needed.
 
 ### Functions
 
-print_discounted_topsellers(count=1, discount=33)
-    count - defaults to 1. count <= 25 well get at least the top 25 topsellers. this list is then trimmed by...
-    discount - defaults to 33
+#### print_discounted_topsellers(count=1, discount=33)
+count - defaults to 1. count <= 25 well get at least the top 25 topsellers. this list is then trimmed by...<br>
+discount - defaults to 33
     
 Example:
 ```
