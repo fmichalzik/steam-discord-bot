@@ -14,8 +14,17 @@ The idea is to utilize API calls to recieve data from Steam and use the data for
 
 
 ### Setup
-The requests package is needed.
-```pip install requests```
+Set up a virtual environment. Virtual environments are Python's way<br>
+to keep dependencies separate from other projects on our machine.
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install the requirements.
+```
+pip install -r requirements.txt
+```
 
 ### Functions
 
