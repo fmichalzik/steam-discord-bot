@@ -3,7 +3,7 @@ import requests
 def get_appdetails(app_id):
 
     # the request will return data for a specified steam appId 
-    url = f"https://store.steampowered.com/api/appdetails?appids={app_id}"
+    url = f"https://store.steampowered.com/api/appdetails?cc=de&appids={app_id}"
     response = requests.get(url)
 
     if response.status_code != 200:
@@ -33,6 +33,6 @@ def get_appdetails_price_info(app_id):
             "final_price": price_info.get("final") / 100,
             "original_price": price_info.get("initial") / 100,
             "currency": price_info.get("currency"),
-            "steam_url": f"https://store.steampowered.com/app/{app_id}"
+            "steam_url": f"<https://store.steampowered.com/app/{app_id}>"
         }
     return {}
