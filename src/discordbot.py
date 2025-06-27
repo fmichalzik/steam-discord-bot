@@ -4,6 +4,7 @@ import discord
 from topsellers import message_discounted_topsellers
 from specials import message_specials
 from keywords import GREETINGS
+from search import message_games_by_name
 
 ##### SETUP FOR THE BOT #####
 
@@ -44,6 +45,15 @@ async def on_message(message):
     if message.content.startswith('!specials'):
         await message.channel.send("Was Besonderes, mhm? Na mal sehen ...")
         await message.channel.send(message_specials())
+
+    if message.content.startswith('!search'):
+        # Ganze Nachricht aufteilen in keyword !search und was danach kommt (gamename)
+        parts = message.content.split(' ', 1)
+        if len(parts) < 2:
+            await message.channel.send("Wonach soll ich suchen ? z.B. `!search Republic of Pirates`")
+            return
+        game_name = parts[1]  # Alles nach !search
+        await message.channel.send(message_games_by_name(game_name))
 
     if message.content.startswith('!topseller'):
         await message.channel.send("Du sucht also nach Schätzen, aye? Gib' mir 'ne Sekunde ...")

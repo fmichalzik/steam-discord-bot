@@ -1,9 +1,8 @@
-from topsellers import message_discounted_topsellers
-from specials import get_specials, message_specials
+from search import get_games_by_name, message_games_by_name
 
 def main():
 
-    print(message_specials())
+    print(message_games_by_name('anno 117'))
 
 if __name__ == "__main__":
     main()

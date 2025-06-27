@@ -18,8 +18,7 @@ def message_specials():
         return "Ich find' gerade nichts, hau mal den Captain an!"
     message = (
 f'''
-⭐ Aktuelle Steam-Specials !!!
-        
+⭐ Aktuelle Steam-Specials !!!       
 ''')
     for game in specials:
         message += (
