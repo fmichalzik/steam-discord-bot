@@ -28,7 +28,8 @@ pip install -r requirements.txt
 
 ### Functions
 
-#### print_discounted_topsellers(count=1, discount=33)
+#### message_discounted_topsellers(count=1, discount=33)
+bot keyword: !topseller<br>
 count - defaults to 1. count <= 25 well get at least the top 25 topsellers. this list is then trimmed by...<br>
 discount - defaults to 33
     
@@ -65,4 +66,38 @@ Link: https://store.steampowered.com/app/1774580
 Far Cry® 5 - 85% Rabatt
 Preis: 8.99€ (statt 59.99€)
 Link: https://store.steampowered.com/app/552520
+```
+#### message_specials()
+bot keyword: !specials<br>
+count - defaults to 1. count <= 25 well get at least the top 25 topsellers. this list is then trimmed by...<br>
+discount - defaults to 33
+
+Example:
+```
+⭐ Aktuelle Steam-Specials !!!
+
+
+Cyberpunk 2077 - 65% Rabatt
+Preis: 20.99€ (statt 59.99€)
+Link: https://store.steampowered.com/app/1091500
+
+
+ELDEN RING - 40% Rabatt
+Preis: 35.99€ (statt 59.99€)
+Link: https://store.steampowered.com/app/1245620
+
+
+Sons Of The Forest - 66% Rabatt
+Preis: 9.85€ (statt 28.99€)
+Link: https://store.steampowered.com/app/1326470
+
+
+Baldur's Gate 3 - 20% Rabatt
+Preis: 47.99€ (statt 59.99€)
+Link: https://store.steampowered.com/app/1086940
+
+
+Red Dead Redemption 2 - 75% Rabatt
+Preis: 14.99€ (statt 59.99€)
+Link: https://store.steampowered.com/app/1174180
 ```
