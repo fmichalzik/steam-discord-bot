@@ -35,7 +35,8 @@ async def on_message(message):
     if message.content.startswith('!help'):
             help_response = (f'''Was kann ich für Euch tun, Matrose?
                         - !topseller
-                        - !specials''')
+                        - !specials
+                        - !search xy ''')
             await message.channel.send(help_response)
     
     for greeting in GREETINGS:
