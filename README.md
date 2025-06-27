@@ -1,8 +1,8 @@
 # steam-discord-bot
 First personal python project. <br>
 
-This discord bot is designed to request data from Steam and use that data. For example to post the recent steam topsellers or search for a game on steam.<br>
-You will encounter a lot of german for the bot messages and they are pirate-ish in style, cause i built this bot for a pirate themed discord channel.<br>
+This discord bot is designed to request data from Steam and use that data. For example to post the recent steam topsellers or search for a game on steam.
+You will encounter a lot of german for the bot messages and they are pirate-ish in style, cause i built this bot for a pirate themed discord channel.
 The bots name is 'BootyBot' and he searches for treasures (aka discounted topsellers on steam) ...  ... but feel free to change to messages to your liking.
 
 ## Instructions
