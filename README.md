@@ -26,6 +26,64 @@ Install the requirements.
 pip install -r requirements.txt
 ```
 
+You have to create a .env file at the root of the project. This is where you store your public key for your discord.dev application
+```
+DISCORD_TOKEN = yourKey
+```
+
+### Starting the Bot
+With venv running, and from the root of the project:
+```
+python src/discordbot.py
+```
+
+### Hosting
+If you started the bot from you working machine, the bot will shut down as soon as you kill you terminal session.<br>
+In order to host the bot, there a online service that can do that. I use a raspberry pi and systemd to host the bot.<br>
+Set up your bot as a Linux service, so it starts on boot and restarts automatically.<br>
+Example service file:
+```
+# /etc/systemd/system/discordbot.service
+
+[Unit]
+Description=Discord Bot
+After=network.target
+
+[Service]
+WorkingDirectory=/home/pi/your-bot-folder
+ExecStart=/home/pi/your-bot-folder/venv/bin/python bot.py
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+```
+Make sure the service file is owned and readable by root:
+```
+sudo chown root:root /etc/systemd/system/discordbot.service
+sudo chmod 644 /etc/systemd/system/discordbot.service
+```
+Then:
+```
+sudo systemctl daemon-reexec
+sudo systemctl enable discordbot
+sudo systemctl start discordbot
+```
+To check status:
+```
+sudo systemctl status discordbot
+```
+To follow logs:
+```
+journalctl -u discordbot -f
+```
+To restart the bot service:
+```
+sudo systemctl restart discordbot
+# or
+sudo systemctl stop discordbot
+sudo systemctl start discordbot
+```
 ### Functions
 
 #### message_discounted_topsellers(count=1, discount=33)
