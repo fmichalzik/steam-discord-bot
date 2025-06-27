@@ -1,8 +1,9 @@
-from topsellers import message_discounted_topsellers, get_topsellers, get_topsellers_names, get_discounted_topsellers
+from topsellers import message_discounted_topsellers
+from specials import get_specials, message_specials
 
 def main():
 
-    print(message_discounted_topsellers())
+    print(message_specials())
 
 if __name__ == "__main__":
     main()
