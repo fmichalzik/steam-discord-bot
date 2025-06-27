@@ -1,27 +1,28 @@
 # steam-discord-bot
 First personal python project. <br>
 
-The idea is to utilize API calls to recieve data from Steam and use the data for a discord bot to post stuff on a personal discord. 
+This discord bot is designed to request data from Steam and use that data. For example to post the recent steam topsellers or search for a game on steam.<br>
+You will encounter a lot of german for the bot messages and they are pirate-ish in style, cause i built this bot for a pirate themed discord channel.<br>
+The bots name is 'BootyBot' and he searches for treasures (aka discounted topsellers on steam) ...  ... but feel free to change to messages to your liking.
 
-### Initial Steps
-- learning / understanding steams api (/)
-- create the first api call function (like get topseller) (/)
-- create a initial framework so additional call functions can be added later
+## Instructions
 
-- learn about discord bots
-- setup a discord bot for a personal discord
-- find a way "for the discord bot to youse the api call functions"
-
+### Prerequisites
+- Python 3.8 or higher
+- A Discord bot token
+- Discord server with admin rights
+- A way to host the discord bot
 
 ### Setup
-Set up a virtual environment. Virtual environments are Python's way<br>
+Clone repo and set up a virtual environment. Virtual environments are Python's way<br>
 to keep dependencies separate from other projects on our machine.
+
 ```
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate
 ```
 
-Install the requirements.
+Install the requirements:
 ```
 pip install -r requirements.txt
 ```
@@ -84,7 +85,8 @@ sudo systemctl restart discordbot
 sudo systemctl stop discordbot
 sudo systemctl start discordbot
 ```
-### Functions
+
+## Functions & Bot Commands
 
 #### message_discounted_topsellers(count=1, discount=33)
 bot keyword: !topseller<br>
@@ -127,8 +129,6 @@ Link: https://store.steampowered.com/app/552520
 ```
 #### message_specials()
 bot keyword: !specials<br>
-count - defaults to 1. count <= 25 well get at least the top 25 topsellers. this list is then trimmed by...<br>
-discount - defaults to 33
 
 Example:
 ```
@@ -158,4 +158,15 @@ Link: https://store.steampowered.com/app/1086940
 Red Dead Redemption 2 - 75% Rabatt
 Preis: 14.99€ (statt 59.99€)
 Link: https://store.steampowered.com/app/1174180
+```
+#### message_games_by_name(game_name)
+bot keyword: !search *game name*<br>
+
+Example:
+```
+🔍 Schau mal was ich gefunden habe:
+
+Gothic II: Gold Edition - ID 39510
+Preis: 4.99€   Metascore: 79 
+Link: https://store.steampowered.com/app/39510
 ```
