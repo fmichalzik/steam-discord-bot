@@ -1,4 +1,5 @@
 import requests
+from appdetails import get_appdetails_release_date
 
 def get_games_by_name(game_name):
     input = game_name.split(" ")
@@ -29,5 +30,10 @@ Preis: {game.get('price', {}).get('final', 0)/100}€   Metascore: {game['metasc
 Link: <https://store.steampowered.com/app/{game['id']}>
 '''
     )
+        release_date = get_appdetails_release_date(game['id'])
+        if release_date:
+            message += (
+f'''Release: {release_date}
+''')
     
     return message

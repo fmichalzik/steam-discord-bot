@@ -36,3 +36,9 @@ def get_appdetails_price_info(app_id):
             "steam_url": f"<https://store.steampowered.com/app/{app_id}>"
         }
     return {}
+
+def get_appdetails_release_date(app_id):
+    release_date = get_appdetails(app_id).get("release_date", [])
+    if release_date["coming_soon"]:
+        return release_date["date"]
+    return None
