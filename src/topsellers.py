@@ -34,6 +34,12 @@ def get_topsellers_ids(count=1):
 
 # returns a list with price and discount informations, based on the topsellers id list
 def get_discounted_topsellers(count=1, discount=33):
+    if not isinstance(count, int):
+        raise TypeError("Inputs must be integer.")
+    if not isinstance(discount, int):
+        raise TypeError("Inputs must be integer.")
+    if count <= 0 or discount <= 0:
+        raise ValueError("Input integer must be positive.")
     discounted_topsellers = []
     topsellers_ids = get_topsellers_ids(count)
     for topseller_id in topsellers_ids:
@@ -49,8 +55,7 @@ def message_discounted_topsellers(count=1, discount=33):
         return "Ich find' gerade nichts, hau mal den Captain an!"
     message = (
 f'''
-🎮 Aktuelle Steam-Topseller mit mindestens {discount}% Rabatt: {len(discounted_topsellers)}
-        
+🎮 Aktuelle Steam-Topseller mit mindestens {discount}% Rabatt: {len(discounted_topsellers)}       
 ''')
     for game in discounted_topsellers:
         message += (
@@ -58,7 +63,6 @@ f'''
 {game['name']} - {game['discount_percent']}% Rabatt
 Preis: {game['final_price']}€ (statt {game['original_price']}€)
 Link: {game['steam_url']}
-
 '''
         )
     

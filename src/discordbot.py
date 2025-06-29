@@ -33,10 +33,12 @@ async def on_message(message):
         return
     
     if message.content.startswith('!help'):
-            help_response = (f'''Was kann ich für Euch tun, Matrose?
-                        - !topseller
-                        - !specials
-                        - !search xy ''')
+            help_response = (
+f'''Was kann ich für Euch tun, Matrose?
+- !topseller count discount
+- !specials
+- !search xy
+''')
             await message.channel.send(help_response)
     
     for greeting in GREETINGS:
@@ -58,6 +60,10 @@ async def on_message(message):
 
     if message.content.startswith('!topseller'):
         await message.channel.send("Du sucht also nach Schätzen, aye? Gib' mir 'ne Sekunde ...")
-        await message.channel.send(message_discounted_topsellers())
+        parts = message.content.split(' ')
+        if len(parts) != 3:
+            await message.channel.send(message_discounted_topsellers())
+        else:
+            await message.channel.send(message_discounted_topsellers(int(parts[1]), int(parts[2])))
 
 client.run(TOKEN)
